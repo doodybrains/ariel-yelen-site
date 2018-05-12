@@ -1,0 +1,22 @@
+.home-wrapper {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .quadrant {
+    border-top: 6px solid #EEDF0C;
+    border-bottom: 6px solid #EEDF0C;
+    border-right: 6px solid #EEDF0C;
+    width: 25%;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: .75em;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
