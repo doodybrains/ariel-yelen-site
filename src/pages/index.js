@@ -12,16 +12,16 @@ class Index extends React.Component {
   render() {
     return (
       <div className="home-wrapper">
-        <div className="quadrant">
+        <div className="quadrant one">
           <p>poems</p>
         </div>
-        <div className="quadrant">
+        <div className="quadrant two">
           <p>video</p>
         </div>
-        <div className="quadrant">
+        <div className="quadrant three">
           <p>bio</p>
         </div>
-        <div className="quadrant">
+        <div className="quadrant four">
           <p>info</p>
         </div>
       </div>

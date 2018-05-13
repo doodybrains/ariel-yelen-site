@@ -6,17 +6,35 @@
   width: 100%;
 
   .quadrant {
-    border-top: 6px solid #EEDF0C;
-    border-bottom: 6px solid #EEDF0C;
-    border-right: 6px solid #EEDF0C;
+    border-top: 3px solid #EEDF0C;
+    border-right: 3px solid #EEDF0C;
     width: 25%;
     padding: 10px;
     cursor: pointer;
     text-align: center;
     font-size: .75em;
+    height: calc(100vh - 46px);
 
     &:last-child {
       border-right: none;
+    }
+    p {
+      letter-spacing: .09em;
+    }
+    &.one {
+      p { padding-top: 30%; }
+    }
+
+    &.two {
+      p { padding-top: 80%; }
+    }
+
+    &.three {
+      p { padding-top: 60%; }
+    }
+
+    &.four {
+      p { padding-top: 10%; }
     }
   }
 }

@@ -10,8 +10,7 @@ class Layout extends React.Component {
       <div className="outer-wrapper">
       <Helmet>
           <meta charSet="utf-8" />
-          <title>My Title</title>
-          <link rel='stylesheet' href='https://www.cnap.graphismeenfrance.fr/infini/css/infini-fontes.css'/>
+          <title>Ariel Yelen</title>
       </Helmet>
         <div>
           <Header />

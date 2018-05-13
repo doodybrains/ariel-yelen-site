@@ -25,7 +25,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 button {
-  font-family: 'Infini', sans-serif !important;
+  font-family: 'infini-regular', sans-serif !important;
 }
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -34,7 +34,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   font-size: 12px;
   font-weight: normal;
-  font-family: 'Infini', sans-serif;
+  font-family: 'infini-regular', sans-serif;
   /* w3C */
    text-rendering: optimizeLegibility;
    font-feature-settings: "liga" 1, "dlig" 1;
@@ -52,7 +52,7 @@ body {
   height: 100vh;
   color: #EEDF0C;
   background: #fff;
-  border: 6px solid #EEDF0C;
+  border: 3px solid #EEDF0C;
   @media (min-width: 601px) { font-size: 20px; }
   @media (min-width: 901px) { font-size: 26px; }
 }
@@ -89,4 +89,14 @@ a:hover {
 .mobile-only {
   display: none;
   @media (max-width: 600px) { display: block; }
+}
+
+
+@font-face {
+  font-family: 'infini-regular';
+  src: url('../fonts/infini-regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/infini-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/infini-regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/infini-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/infini-regular.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
