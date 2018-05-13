@@ -11,7 +11,7 @@ class Layout extends React.Component {
       <Helmet>
           <meta charSet="utf-8" />
           <title>My Title</title>
-          <link rel='stylesheet' href='http://www.cnap.graphismeenfrance.fr/infini/css/infini-fontes.css'/>
+          <link rel='stylesheet' href='https://www.cnap.graphismeenfrance.fr/infini/css/infini-fontes.css'/>
       </Helmet>
         <div>
           <Header />
