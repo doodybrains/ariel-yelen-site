@@ -24,6 +24,15 @@ class Index extends React.Component {
         <div className="quadrant four">
           <p>info</p>
         </div>
+
+        <div className="content-block">
+          <div className="wrapper">
+            <a href="#">link one</a>
+            <a href="#">link two</a>
+            <a href="#">link three</a>
+            <a href="#">link four</a>
+          </div>
+        </div>
       </div>
     )
   }

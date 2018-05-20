@@ -1,14 +1,18 @@
 .header {
-  background: white;
+  background: transparent;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 99;
-  text-align: center;
+  text-align: left;
   height: 50px;
-  border: 3px solid #EEDF0C;
+  // border: 3px solid #EEDF0C;
+  font-family: 'Rubik', sans-serif;
+  font-size: 2em;
+  letter-spacing: .09em;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 15px;
 }

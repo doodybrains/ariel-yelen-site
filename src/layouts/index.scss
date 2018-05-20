@@ -25,34 +25,33 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 button {
-  font-family: 'infini-regular', sans-serif !important;
+  font-family: 'Titillium Web', sans-serif;
 }
+
+
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+
+$purple: #8100b3;
+$red: #ff1900;
+
+$white: #ffffff;
+
+$blue: #0067aa;
+$yellow: #fdad00;
+$darkRed: #d20012;
+
 body {
   font-size: 12px;
-  font-weight: normal;
-  font-family: 'infini-regular', sans-serif;
-  /* w3C */
-   text-rendering: optimizeLegibility;
-   font-feature-settings: "liga" 1, "dlig" 1;
-  /* prefixe */
-  -ms-text-rendering: optimizeLegibility;
-  -o-text-rendering: optimizeLegibility;
-  -webkit-text-rendering: optimizeLegibility;
-  -moz-text-rendering: optimizeLegibility;
-  -webkit-font-feature-settings: "liga" 1, "dlig" 1;
-  -moz-font-feature-settings: "liga=1, dlig=1";
-  -ms-font-feature-settings: "liga" 1, "dlig" 1;
-  -o-font-feature-settings: "liga" 1, "dlig" 1;
+  font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
   height: 100vh;
-  color: #EEDF0C;
-  background: #fff;
-  border: 3px solid #EEDF0C;
+  color: $red;
+  background: $purple;
   @media (min-width: 601px) { font-size: 20px; }
   @media (min-width: 901px) { font-size: 26px; }
 }
@@ -89,14 +88,4 @@ a:hover {
 .mobile-only {
   display: none;
   @media (max-width: 600px) { display: block; }
-}
-
-
-@font-face {
-  font-family: 'infini-regular';
-  src: url('../fonts/infini-regular.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/infini-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/infini-regular.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/infini-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/infini-regular.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
