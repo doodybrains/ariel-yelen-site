@@ -8,8 +8,8 @@ class Index extends React.Component {
     super(props);
   }
 
-
   render() {
+    console.log(this.props.data);
     return (
       <div className="home-wrapper">
         <div className="quadrant one">
@@ -27,10 +27,11 @@ class Index extends React.Component {
 
         <div className="content-block">
           <div className="wrapper">
-            <a href="#">link one</a>
-            <a href="#">link two</a>
-            <a href="#">link three</a>
-            <a href="#">link four</a>
+            {this.props.data.allContentfulAllPoems.edges[0].node.poemsList.map((poem, i) => {
+              return (
+                <a href={poem.poemLink}>{poem.journalName}, {poem.poemTitle}</a>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -38,5 +39,24 @@ class Index extends React.Component {
   }
 }
 
-
 export default Index
+
+export const pageQuery = graphql`
+  query indexQuery {
+    allContentfulAllPoems (limit: 100) {
+      edges {
+        node {
+          id
+          poemsList {
+            ...poemsInList
+          }
+        }
+      }
+    }
+  }
+  fragment poemsInList on ContentfulPoem {
+    poemTitle
+    poemLink
+    journalName
+  }
+`
