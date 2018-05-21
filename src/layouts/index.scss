@@ -52,6 +52,8 @@ body {
   height: 100vh;
   color: $red;
   background: $purple;
+  overflow-x: hidden;
+  overflow-y: scroll;
   @media (min-width: 601px) { font-size: 20px; }
   @media (min-width: 901px) { font-size: 26px; }
 }

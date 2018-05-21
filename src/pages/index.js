@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link';
 import Header from '../components/header';
 import './index.scss';
-
+import blob from '../fonts/blob.svg'
 class Index extends React.Component {
   constructor(props) {
     super(props);
@@ -69,6 +69,7 @@ class Index extends React.Component {
         </div>
 
         <div className="content-block">
+          <img src={blob} />
           <div className="wrapper">
             {data}
           </div>
