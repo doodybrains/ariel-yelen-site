@@ -15,6 +15,7 @@ class Index extends React.Component {
   render() {
     const contentType = null;
     let data = null;
+    const changeClass = this.state.activeContent !== '' ? 'content-up' : 'content-down';
 
     if (this.state.activeContent === 'poems' && this.props.data) {
       data = (
@@ -54,24 +55,29 @@ class Index extends React.Component {
       )
     }
     return (
-      <div className="home-wrapper">
-        <div onClick={this.setContent.bind(this, 'poems')} className="quadrant one">
-          <p>poems</p>
+      <div className={`home-wrapper ${changeClass}`}>
+        <div className="nav">
+          <p onClick={this.setContent.bind(this, 'poems')} className="quadrant one">
+            poems
+          </p>
+          <p onClick={this.setContent.bind(this, 'videos')} className="quadrant two">
+            video
+          </p>
+          <p onClick={this.setContent.bind(this, 'about')} className="quadrant three">
+            bio
+          </p>
+          <p onClick={this.setContent.bind(this, 'blog')} className="quadrant four">
+            &
+          </p>
         </div>
-        <div onClick={this.setContent.bind(this, 'videos')} className="quadrant two">
-          <p>video</p>
-        </div>
-        <div onClick={this.setContent.bind(this, 'about')} className="quadrant three">
-          <p>bio</p>
-        </div>
-        <div onClick={this.setContent.bind(this, 'blog')} className="quadrant four">
-          <p>&</p>
-        </div>
+
 
         <div className="content-block">
           <img src={blob} />
           <div className="wrapper">
-            {data}
+            <div className="overflow-wrapper">
+              {data}
+            </div>
           </div>
         </div>
       </div>

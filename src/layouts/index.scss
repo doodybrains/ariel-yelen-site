@@ -28,8 +28,6 @@ button {
   font-family: 'Titillium Web', sans-serif;
 }
 
-
-
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
@@ -52,8 +50,8 @@ body {
   height: 100vh;
   color: $red;
   background: $purple;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  height: 100vh;
+  overflow: hidden;
   @media (min-width: 601px) { font-size: 20px; }
   @media (min-width: 901px) { font-size: 26px; }
 }
