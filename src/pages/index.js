@@ -21,7 +21,8 @@ class Index extends React.Component {
       data = (
         this.props.data.allContentfulAllPoems.edges[0].node.poemsList.map((poem, i) => {
           return (
-            <a key={i} href={poem.poemLink}>{poem.journalName}, {poem.poemTitle}</a>
+            <a key={i} target="_blank" href={poem.poemLink}>{poem.journalName}, {poem.poemTitle}</a>
+
           );
         })
       )
@@ -77,6 +78,20 @@ class Index extends React.Component {
           <div className="wrapper">
             <div className="overflow-wrapper">
               {data}
+              <p>adding text here just to test</p>
+              <p>adding text here just to test</p>
+              <p>adding text here just to test</p>
+              <p>adding text here just to test</p>
+              <p>adding text here just to test</p>
+              <p>adding text here just to test</p>
+              <p>adding text here just to test</p>
+              <p>adding text here just to test</p>
+              <p>adding text here just to test</p>
+              <p>adding text here just to test</p>
+              <p>adding text here just to test</p>
+              <p>adding text here just to test</p>
+              <p>adding text here just to test</p>
+              <p>adding text here just to test</p>
             </div>
           </div>
         </div>
