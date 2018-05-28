@@ -74,7 +74,25 @@ class Index extends React.Component {
 
 
         <div className="content-block">
-          <img src={blob} />
+        <div className="image">
+        <svg id="organic-blob" width="300" height="300" xmlns="http://www.w3.org/2000/svg" filter="url(#goo)">
+         <g>
+          <circle r="100" cy="145" cx="150">
+            <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 145 150" to="360 145 150" dur="10s" repeatCount="indefinite"/>
+           </circle>
+          <circle r="100" cy="155" cx="150">
+            <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="360 155 150" to="0 155 150" dur="20s" repeatCount="indefinite"/>
+           </circle>
+          <circle r="100" cy="150" cx="145">
+            <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 150 145" to="360 150 145" dur="30s" repeatCount="indefinite"/>
+           </circle>
+          <circle r="100" cy="150" cx="155">
+            <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="360 150 155" to="0 150 155" dur="25s" repeatCount="indefinite"/>
+           </circle>
+         </g>
+        </svg>
+        </div>
+
           <div className="wrapper">
             <div className="overflow-wrapper">
               {data}

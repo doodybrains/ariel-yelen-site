@@ -20,18 +20,19 @@ $darkRed: #d20012;
     width: 100%;
     display: flex;
     align-items: center;
+    color: $purple;
     justify-content: center;
     position: relative;
     z-index: 99999;
     top: 0%;
     transition: all 2s;
-
+    background: transparent;
     p {
       cursor: pointer;
       transition: all 1s;
 
       &:hover {
-        color: $white;
+        color: $yellow;
         transition: all 1s;
       }
     }
@@ -56,13 +57,24 @@ $darkRed: #d20012;
     margin: 0 auto;
     transition: 2s transform;
 
-    img {
+    .image {
+      display: block;
       position: absolute;
       width: 100%;
       height: 150%;
       transform: translateY(-20%);
       z-index: 999;
       transition: 4s all;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+
+      svg {display: block;margin: 0 auto;}
+
+      circle {
+        fill: $darkRed;
+        transition: 4s all;
+      }
     }
 
     .wrapper {
@@ -89,7 +101,7 @@ $darkRed: #d20012;
       transition: .325s all;
 
       &:hover {
-        color: $blue;
+        color: $red;
         transition: .325s all;
       }
     }
@@ -103,9 +115,15 @@ $darkRed: #d20012;
     transform: translateY(-80%);
     transition: 2s transform;
 
-    img {
-      background: $yellow;
-      transform: translateY(-25%);
+    svg {
+      background: transparent;
+      transform: translateY(30%);
+      transition: 4s all;
+      width: 100%;
+    }
+
+    circle {
+      fill: $yellow;
       transition: 4s all;
     }
   }
