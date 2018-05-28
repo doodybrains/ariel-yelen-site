@@ -96,20 +96,6 @@ class Index extends React.Component {
           <div className="wrapper">
             <div className="overflow-wrapper">
               {data}
-              <p>adding text here just to test</p>
-              <p>adding text here just to test</p>
-              <p>adding text here just to test</p>
-              <p>adding text here just to test</p>
-              <p>adding text here just to test</p>
-              <p>adding text here just to test</p>
-              <p>adding text here just to test</p>
-              <p>adding text here just to test</p>
-              <p>adding text here just to test</p>
-              <p>adding text here just to test</p>
-              <p>adding text here just to test</p>
-              <p>adding text here just to test</p>
-              <p>adding text here just to test</p>
-              <p>adding text here just to test</p>
             </div>
           </div>
         </div>
