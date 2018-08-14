@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 import Header from '../components/header';
 import './index.scss';
 import blob from '../fonts/blob.svg'
+
 class Index extends React.Component {
   constructor(props) {
     super(props);
@@ -20,10 +21,17 @@ class Index extends React.Component {
     if (this.state.activeContent === 'poems' && this.props.data) {
       data = (
         this.props.data.allContentfulAllPoems.edges[0].node.poemsList.map((poem, i) => {
-          return (
-            <a key={i} target="_blank" href={poem.poemLink}>{poem.journalName}, {poem.poemTitle}</a>
+          const isLink = poem.poemLink ? true : false;
+          if (isLink) {
+            return (
+              <a className="poem-post" key={i} target="_blank" href={poem.poemLink}>{poem.journalName}, {poem.poemTitle}</a>
+            );
+          } else {
+            return (
+              <p className="poem-post" key={i}>{poem.journalName}, {poem.poemTitle}</p>
+            );
+          }
 
-          );
         })
       )
     }
@@ -31,7 +39,7 @@ class Index extends React.Component {
       data = (
         this.props.data.allContentfulAllVideos.edges[0].node.videosList.map((vid, i) => {
           return (
-            <p key={i}>{vid.videoTitle}</p>
+            <p className="video-post" key={i}>{vid.videoTitle}</p>
           );
         })
       )
@@ -39,18 +47,17 @@ class Index extends React.Component {
     if (this.state.activeContent === 'about' && this.props.data) {
       data = (
         <div
-          className=""
+          className="about"
           dangerouslySetInnerHTML={{
             __html: this.props.data.contentfulAbout.aboutText.childMarkdownRemark.html,
           }} />
       )
     }
-
     if (this.state.activeContent === 'blog' && this.props.data) {
       data = (
         this.props.data.allContentfulAllPosts.edges[0].node.blogPostList.map((bp, i) => {
           return (
-            <p key={i}>{bp.title}</p>
+            <p className="blog-post" key={i}>{bp.title}</p>
           );
         })
       )
@@ -74,25 +81,6 @@ class Index extends React.Component {
 
 
         <div className="content-block">
-        <div className="image">
-        <svg id="organic-blob" width="300" height="300" xmlns="http://www.w3.org/2000/svg" filter="url(#goo)">
-         <g>
-          <circle r="100" cy="145" cx="150">
-            <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 145 150" to="360 145 150" dur="10s" repeatCount="indefinite"/>
-           </circle>
-          <circle r="100" cy="155" cx="150">
-            <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="360 155 150" to="0 155 150" dur="20s" repeatCount="indefinite"/>
-           </circle>
-          <circle r="100" cy="150" cx="145">
-            <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 150 145" to="360 150 145" dur="30s" repeatCount="indefinite"/>
-           </circle>
-          <circle r="100" cy="150" cx="155">
-            <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="360 150 155" to="0 150 155" dur="25s" repeatCount="indefinite"/>
-           </circle>
-         </g>
-        </svg>
-        </div>
-
           <div className="wrapper">
             <div className="overflow-wrapper">
               {data}
