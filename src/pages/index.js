@@ -24,11 +24,15 @@ class Index extends React.Component {
           const isLink = poem.poemLink ? true : false;
           if (isLink) {
             return (
-              <a className="poem-post" key={i} target="_blank" href={poem.poemLink}>{poem.journalName}, {poem.poemTitle}</a>
+              <a className="poem-post" key={i} target="_blank" href={poem.poemLink}>
+                <span className="journal">{poem.journalName}</span>, <span>{poem.poemTitle}</span>
+              </a>
             );
           } else {
             return (
-              <p className="poem-post" key={i}>{poem.journalName}, {poem.poemTitle}</p>
+              <p className="poem-post" key={i}>
+                <span className="journal">{poem.journalName}</span>, <span>{poem.poemTitle}</span>
+              </p>
             );
           }
 
@@ -38,8 +42,16 @@ class Index extends React.Component {
     if (this.state.activeContent === 'videos' && this.props.data) {
       data = (
         this.props.data.allContentfulAllVideos.edges[0].node.videosList.map((vid, i) => {
+          var vimeoString = vid.vimeoLink;
+          var hash = vimeoString.substring(vimeoString.lastIndexOf("/") + 1);
+
           return (
-            <p className="video-post" key={i}>{vid.videoTitle}</p>
+            <div className="video-post" key={i}>
+              <p>{vid.videoTitle}</p>
+              <div className="frame">
+                <iframe src={`https://player.vimeo.com/video/${hash}`} frameBorder="0" allowFullScreen></iframe>
+              </div>
+            </div>
           );
         })
       )
@@ -56,8 +68,24 @@ class Index extends React.Component {
     if (this.state.activeContent === 'blog' && this.props.data) {
       data = (
         this.props.data.allContentfulAllPosts.edges[0].node.blogPostList.map((bp, i) => {
+
           return (
-            <p className="blog-post" key={i}>{bp.title}</p>
+            <div className="blog-post" key={i}>
+              {!bp.link &&
+                <span className="title">{bp.title}</span>
+              }
+              {bp.link &&
+                <a href={bp.link} target="_blank" className="title">{bp.title}</a>
+              }
+
+              {bp.bodyText &&
+                <div
+                  className="blog-text"
+                  dangerouslySetInnerHTML={{
+                    __html: bp.bodyText.childMarkdownRemark.html,
+                  }} />
+              }
+            </div>
           );
         })
       )
@@ -152,5 +180,10 @@ export const pageQuery = graphql`
   fragment blogPostInList on ContentfulBlogPost {
     title
     link
+    bodyText {
+      childMarkdownRemark {
+        html
+      }
+    }
   }
 `

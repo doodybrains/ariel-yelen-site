@@ -9,7 +9,7 @@ a:hover {
 
   h3 {
     width: 25%;
-    border: 1px dotted rgba(0,0,0,.5);
+    border: 1px dotted rgba(204,255,102,1);
   }
 }
 .nav {
@@ -18,24 +18,24 @@ a:hover {
     cursor: pointer;
   }
   p:first-child {
-    border: 1px dotted rgba(0,0,0,.5);
+    border: 1px dotted rgba(204,255,102,1);
     padding-left: 15px;
   }
   p:nth-child(2) {
-    border: 1px dotted rgba(0,0,0,.5);
+    border: 1px dotted rgba(204,255,102,1);
     padding-left: 30px;
   }
   p:nth-child(3) {
-    border: 1px dotted rgba(0,0,0,.5);
+    border: 1px dotted rgba(204,255,102,1);
     padding-left: 45px;
   }
   p:nth-child(4) {
-    border: 1px dotted rgba(0,0,0,.5);
+    border: 1px dotted rgba(204,255,102,1);
     padding-left: 60px;
   }
 }
 .content-block {
-  border: 1px dotted rgba(0,0,0,.5);
+  border: 1px dotted rgba(204,255,102,1);
   position: absolute;
   top: 0;
   left: 25%;
@@ -54,10 +54,45 @@ a:hover {
       display: block;
       width: 80%;
       margin-bottom: 30px;
-      border: 1px dotted rgba(0,0,0,.5);
-      padding: 0 40px;
-      display: flex;
-      align-items: center;
+      border: 1px dotted rgba(204,255,102,1);
+      padding: 10px 20px;
+    }
+    .poem-post {
+      span.journal {
+        display: inline;
+        font-style: italic;
+        color: rgba(0,0,0,.7)
+      }
+    }
+    .video-post {
+      margin-bottom: 60px;
+      .frame {
+        position: relative;
+        height: 0;
+        padding-bottom: 56.25%;
+      }
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .blog-post {
+      .title {
+        font-style: italic;
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+      a.title {
+        border-bottom: 3px dashed hotpink;
+      }
+      img {
+        display: block;
+        width: 80%;
+      }
     }
   }
 }
