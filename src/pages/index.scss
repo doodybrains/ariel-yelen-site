@@ -1,6 +1,9 @@
+$lavender: rgba(204,102,255,.8);
+$blue: rgba(51,119,255,.8);
+$green: rgba(25,255,217, .8);
+
 a:hover {
   color: hotpink;
-  cursor: pointer;
 }
 .home-wrapper {
   padding-top: 63px;
@@ -9,39 +12,44 @@ a:hover {
 
   h3 {
     width: 25%;
-    border: 1px dotted rgba(204,255,102,1);
+    border: 1px dotted $lavender;
   }
 }
 .nav {
   p {
     margin-bottom: 3px;
-    cursor: pointer;
+    // cursor: pointer;
+    // z-index: 10;
+    position: relative;
+    &:hover {
+      color: hotpink;
+    }
   }
   p:first-child {
-    border: 1px dotted rgba(204,255,102,1);
-    padding-left: 15px;
+    border: 1px dotted $lavender;
+    padding-left: 19px;
   }
   p:nth-child(2) {
-    border: 1px dotted rgba(204,255,102,1);
-    padding-left: 30px;
+    border: 1px dotted $blue;
+    padding-left: 34px;
   }
   p:nth-child(3) {
-    border: 1px dotted rgba(204,255,102,1);
-    padding-left: 45px;
+    border: 1px dotted $lavender;
+    padding-left: 49px;
   }
   p:nth-child(4) {
-    border: 1px dotted rgba(204,255,102,1);
-    padding-left: 60px;
+    border: 1px dotted $blue;
+    padding-left: 62px;
   }
 }
 .content-block {
-  border: 1px dotted rgba(204,255,102,1);
+  border: 1px dotted $lavender;
   position: absolute;
   top: 0;
   left: 25%;
   height: 100%;
   width: calc(100% - 25%);
-  padding-top: 100px;
+  padding-top: 65px;
   padding-left: 50px;
   padding-right: 20px;
   word-wrap: break-word;
@@ -54,10 +62,12 @@ a:hover {
       display: block;
       width: 80%;
       margin-bottom: 30px;
-      border: 1px dotted rgba(204,255,102,1);
+      border: 1px dotted $green;
       padding: 10px 20px;
     }
     .poem-post {
+      // z-index: 12;
+      position: relative;
       span.journal {
         display: inline;
         font-style: italic;
@@ -65,7 +75,13 @@ a:hover {
       }
     }
     .video-post {
-      margin-bottom: 60px;
+      // z-index: 12;
+      position: relative;
+      margin-bottom: 30px;
+      width: 60%;
+      p {
+        margin-bottom: 10px;
+      }
       .frame {
         position: relative;
         height: 0;
@@ -84,15 +100,24 @@ a:hover {
       .title {
         font-style: italic;
         display: inline-block;
-        margin-bottom: 5px;
-      }
-      a.title {
+        margin-bottom: 8px;
         border-bottom: 3px dashed hotpink;
       }
+
       img {
         display: block;
         width: 80%;
       }
+    }
+  }
+  .about {
+    p {
+      margin-bottom: 20px;
+    }
+    img {
+      display: block;
+      max-width: 90%;
+      // z-index: 1;
     }
   }
 }

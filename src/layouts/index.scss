@@ -52,6 +52,8 @@ body {
   background: $white;
   height: 100vh;
   overflow: hidden;
+  cursor: url("./moon.ico"), auto !important;
+
   @media (min-width: 601px) { font-size: 20px; }
   @media (min-width: 901px) { font-size: 26px; }
 }
@@ -77,6 +79,7 @@ a {
 a:hover {
   text-decoration: none;
   color: #f1f1f1;
+  cursor: url("./moon.ico"), auto !important;
 }
 .outer-wrapper {
   overflow: hidden;
