@@ -31,7 +31,15 @@ class Index extends React.Component {
           } else {
             return (
               <p className="poem-post" key={i}>
-                <span className="journal">{poem.journalName}</span>, <span>{poem.poemTitle}</span>
+                <div className="dots">
+                  <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                  <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                  <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                </div>
+                <span className="journal">
+                  {poem.journalName}
+                </span>,
+                <span>{poem.poemTitle}</span>
               </p>
             );
           }
@@ -47,6 +55,19 @@ class Index extends React.Component {
 
           return (
             <div className="video-post" key={i}>
+              <div className="dots">
+                <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+              </div>
               <p>{vid.videoTitle}</p>
               <div className="frame">
                 <iframe src={`https://player.vimeo.com/video/${hash}`} frameBorder="0" allowFullScreen></iframe>
@@ -58,35 +79,68 @@ class Index extends React.Component {
     }
     if (this.state.activeContent === 'about' && this.props.data) {
       data = (
-        <div
-          className="about"
-          dangerouslySetInnerHTML={{
-            __html: this.props.data.contentfulAbout.aboutText.childMarkdownRemark.html,
-          }} />
+        <div>
+          <div className="dots">
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+          </div>
+
+          <div
+            className="about"
+            dangerouslySetInnerHTML={{
+              __html: this.props.data.contentfulAbout.aboutText.childMarkdownRemark.html,
+            }} />
+        </div>
+
       )
     }
     if (this.state.activeContent === 'blog' && this.props.data) {
       data = (
         this.props.data.allContentfulAllPosts.edges[0].node.blogPostList.map((bp, i) => {
+          const yearTitle = bp.yearTitleEntry ? true : false;
 
-          return (
-            <div className="blog-post" key={i}>
-              {!bp.link &&
-                <span className="title">{bp.title}</span>
-              }
-              {bp.link &&
-                <a href={bp.link} target="_blank" className="title">{bp.title}</a>
-              }
+          if (yearTitle) {
+             return (
+               <div className="blog-post-year" key={i}>
+                <h5>
+                  <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                  <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                  <span dangerouslySetInnerHTML={{__html: "&there4;"}} /> {bp.title} <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                  <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                  <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+                </h5>
+               </div>
+             )
+          } else {
+            return (
+              <div className="blog-post" key={i}>
+                {!bp.link &&
+                  <span className="title">{bp.title}</span>
+                }
+                {bp.link &&
+                  <a href={bp.link} target="_blank" className="title">{bp.title}</a>
+                }
 
-              {bp.bodyText &&
-                <div
-                  className="blog-text"
-                  dangerouslySetInnerHTML={{
-                    __html: bp.bodyText.childMarkdownRemark.html,
-                  }} />
-              }
-            </div>
-          );
+                {bp.bodyText &&
+                  <div
+                    className="blog-text"
+                    dangerouslySetInnerHTML={{
+                      __html: bp.bodyText.childMarkdownRemark.html,
+                    }} />
+                }
+              </div>
+            );
+          }
+
         })
       )
     }
@@ -185,5 +239,6 @@ export const pageQuery = graphql`
         html
       }
     }
+    yearTitleEntry
   }
 `

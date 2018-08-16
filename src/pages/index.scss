@@ -6,6 +6,16 @@ $green: rgba(25,255,217, .8);
 a:hover {
   color: black;
 }
+
+.dots {
+  span:nth-child(odd) {
+    color: $lavender;
+  }
+  span:nth-child(even) {
+    color: $blue;
+  }
+}
+
 .home-wrapper {
   padding-top: 63px;
   position: relative;
@@ -69,7 +79,14 @@ a:hover {
       position: relative;
       background: white;
       width: 90%;
-
+      .dots {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        top: -13px;
+        width: 100%;
+      }
       span.journal {
         display: inline;
         font-style: italic;
@@ -84,6 +101,11 @@ a:hover {
       position: relative;
       margin-bottom: 30px;
       width: 60%;
+      .dots {
+        position: absolute;
+        right: -60px;
+        top: -5px;
+      }
       p {
         margin-bottom: 10px;
       }
@@ -101,7 +123,24 @@ a:hover {
         height: 100%;
       }
     }
+
+    .blog-post-year {
+      h5 {
+        font-size: .675em;
+        margin-bottom: 15px;
+        letter-spacing: .2em;
+        font-weight: lighter;
+
+        span:nth-child(odd) {
+          color: $lavender;
+        }
+        span:nth-child(even) {
+          color: $blue;
+        }
+      }
+    }
     .blog-post {
+
       .title {
         font-style: italic;
         display: inline-block;
