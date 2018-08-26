@@ -67,19 +67,26 @@ a:hover {
   -webkit-overflow-scrolling: touch;
 
   .wrapper {
+    padding-bottom: 120px;
     .poem-post,
     .blog-post,
     .video-post {
       display: block;
-      width: 80%;
+      width: 100%;
       margin-bottom: 30px;
       border: 1px dotted $green;
       padding: 10px 20px;
+      @media only screen and (min-width: 768px) {
+        width: 80%;
+      }
     }
     .poem-post {
       position: relative;
       background: white;
-      width: 90%;
+      width: 100%;
+      @media only screen and (min-width: 768px) {
+        width: 90%;
+      }
       .dots {
         position: absolute;
         right: 0;
@@ -101,8 +108,11 @@ a:hover {
     .video-post {
       position: relative;
       margin-bottom: 30px;
-      width: 60%;
+      width: 100%;
       margin-bottom: 40px;
+      @media only screen and (min-width: 768px) {
+        width: 60%;
+      }
       .dots {
         position: absolute;
         right: -40px;
@@ -145,7 +155,6 @@ a:hover {
       }
     }
     .blog-post {
-
       .title {
         font-style: italic;
         display: inline-block;
@@ -159,7 +168,8 @@ a:hover {
       }
       img {
         display: block;
-        width: 80%;
+        margin-top: 15px;
+        width: 60%;
       }
       a:hover {
         color: hotpink;
