@@ -11,6 +11,7 @@ class Layout extends React.Component {
       <Helmet>
           <meta charSet="utf-8" />
           <title>Ariel Yelen</title>
+          <meta name="description" content="Ariel Yelen - Poet & Visual Artist" />
           <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Rubik:900" rel="stylesheet" />
       </Helmet>
         <div>
