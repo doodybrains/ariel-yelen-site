@@ -2,6 +2,17 @@ $lavender: rgba(204,102,255,.8);
 $blue: rgba(51,119,255,.8);
 $green: rgba(25,255,217, .8);
 
+.header {
+  border: 1px dotted rgba(25,255,217, .8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
 
 a:hover {
   color: black;
@@ -20,6 +31,7 @@ a:hover {
   padding-top: 63px;
   position: relative;
   height: 100vh;
+  overflow: hidden;
   display: block;
 
   h3 {
@@ -27,6 +39,7 @@ a:hover {
     border: 1px dotted $lavender;
   }
 }
+
 .nav {
   p {
     margin-bottom: 3px;
@@ -49,7 +62,11 @@ a:hover {
   }
   p:nth-child(4) {
     border: 1px dotted $blue;
-    padding-left: 62px;
+    padding-left: 32px;
+  }
+  p:nth-child(5) {
+    border: 1px dotted $lavender;
+    padding-left: 72px;
   }
 }
 .content-block {

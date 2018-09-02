@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'gatsby-link';
-import Header from '../components/header';
 import './index.scss';
 import blob from '../fonts/blob.svg'
 
@@ -43,7 +42,6 @@ class Index extends React.Component {
               </p>
             );
           }
-
         })
       )
     }
@@ -103,6 +101,32 @@ class Index extends React.Component {
 
       )
     }
+    if (this.state.activeContent === 'contact' && this.props.data) {
+      data = (
+        <div>
+          <div className="dots">
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+            <span dangerouslySetInnerHTML={{__html: "&there4;"}} />
+          </div>
+
+          <div
+            className="about"
+            dangerouslySetInnerHTML={{
+              __html: this.props.data.contentfulContact.contactInfo.childMarkdownRemark.html,
+            }} />
+        </div>
+
+      )
+    }
     if (this.state.activeContent === 'blog' && this.props.data) {
       data = (
         this.props.data.allContentfulAllPosts.edges[0].node.blogPostList.map((bp, i) => {
@@ -146,6 +170,9 @@ class Index extends React.Component {
     }
     return (
       <a className={`home-wrapper ${changeClass}`}>
+        <div className="header">
+          <h4 onClick={this.setContent.bind(this, '')}>ariel yelen</h4>
+        </div>
         <div className="nav">
           <p onClick={this.setContent.bind(this, 'poems')} className="quadrant one">
             poems
@@ -156,11 +183,13 @@ class Index extends React.Component {
           <p onClick={this.setContent.bind(this, 'about')} className="quadrant three">
             bio
           </p>
-          <p onClick={this.setContent.bind(this, 'blog')} className="quadrant four">
+          <p onClick={this.setContent.bind(this, 'contact')} className="quadrant four">
+            contact
+          </p>
+          <p onClick={this.setContent.bind(this, 'blog')} className="quadrant five">
             &
           </p>
         </div>
-
 
         <div className="content-block">
           <div className="wrapper">
@@ -186,6 +215,13 @@ export const pageQuery = graphql`
   query indexQuery {
     contentfulAbout {
       aboutText {
+        childMarkdownRemark {
+          html
+        }
+      }
+    }
+    contentfulContact {
+      contactInfo {
         childMarkdownRemark {
           html
         }
