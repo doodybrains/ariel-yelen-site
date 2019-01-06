@@ -12,6 +12,10 @@ $green: rgba(25,255,217, .8);
   display: flex;
   align-items: center;
   padding-left: 10px;
+
+  h4:hover {
+    color: hotpink;
+  }
 }
 
 a:hover {
@@ -197,13 +201,19 @@ a:hover {
     p {
       margin-bottom: 20px;
 
-      &:last-child {
-        font-size: .75em;
+
+      em {
+        font-style: italic;
       }
+    }
+    .bio {
+      max-width: 50%;
+      margin: 0 auto;
+      font-size: .75em;
     }
     img {
       display: block;
-      max-width: 90%;
+      width: 100%;
       // z-index: 1;
     }
   }
