@@ -127,7 +127,7 @@ class Index extends React.Component {
 
       )
     }
-    if (this.state.activeContent === 'blog' && this.props.data) {
+    if (this.state.activeContent === '' && this.props.data) {
       data = (
         this.props.data.allContentfulAllPosts.edges[0].node.blogPostList.map((bp, i) => {
           const yearTitle = bp.yearTitleEntry ? true : false;
@@ -177,18 +177,19 @@ class Index extends React.Component {
           <p onClick={this.setContent.bind(this, 'poems')} className="quadrant one">
             poems
           </p>
-          <p onClick={this.setContent.bind(this, 'videos')} className="quadrant two">
-            video
+          <p onClick={this.setContent.bind(this, 'blog')} className="quadrant five">
+            &
           </p>
           <p onClick={this.setContent.bind(this, 'about')} className="quadrant three">
             bio
           </p>
+          <p onClick={this.setContent.bind(this, 'videos')} className="quadrant two">
+            video
+          </p>
           <p onClick={this.setContent.bind(this, 'contact')} className="quadrant four">
             contact
           </p>
-          <p onClick={this.setContent.bind(this, 'blog')} className="quadrant five">
-            &
-          </p>
+
         </div>
 
         <div className="content-block">

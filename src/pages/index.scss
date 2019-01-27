@@ -126,6 +126,9 @@ a:hover {
     a.poem-post:hover {
       color: hotpink;
     }
+    a.poem-post:hover .journal{
+      color: orangered;
+    }
     .video-post {
       position: relative;
       margin-bottom: 30px;
