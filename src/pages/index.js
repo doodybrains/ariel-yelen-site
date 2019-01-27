@@ -168,6 +168,27 @@ class Index extends React.Component {
         })
       )
     }
+    if (this.state.activeContent === 'blog' && this.props.data) {
+      data = (
+        this.props.data.allContentfulAllOtherProjects.edges[0].node.listOfOtherProjects.map((op, i) => {
+            return (
+              <div className="blog-post" key={i}>
+                {op.title &&
+                  <a href={op.link} target="_blank" className="title">{op.title}</a>
+                }
+
+                {op.info &&
+                  <div
+                    className="blog-text"
+                    dangerouslySetInnerHTML={{
+                      __html: op.info.childMarkdownRemark.html,
+                    }} />
+                }
+              </div>
+            );
+        })
+      )
+    }
     return (
       <a className={`home-wrapper ${changeClass}`}>
         <div className="header">
@@ -248,6 +269,16 @@ export const pageQuery = graphql`
         }
       }
     }
+    allContentfulAllOtherProjects (limit: 100) {
+      edges {
+        node {
+          id
+          listOfOtherProjects {
+            ...otherProjectsInList
+          }
+        }
+      }
+    }
     allContentfulAllVideos (limit: 100) {
       edges {
         node {
@@ -256,6 +287,14 @@ export const pageQuery = graphql`
             ...videosInList
           }
         }
+      }
+    }
+  }
+  fragment otherProjectsInList on ContentfulOtherProject {
+    title
+    info {
+      childMarkdownRemark {
+        html
       }
     }
   }
