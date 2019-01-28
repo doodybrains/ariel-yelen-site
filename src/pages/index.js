@@ -190,7 +190,7 @@ class Index extends React.Component {
       )
     }
     return (
-      <a className={`home-wrapper ${changeClass}`}>
+      <div className={`home-wrapper ${changeClass}`}>
         <div className="header">
           <h4 onClick={this.setContent.bind(this, '')}>ariel yelen</h4>
         </div>
@@ -220,7 +220,7 @@ class Index extends React.Component {
             </div>
           </div>
         </div>
-      </a>
+      </div>
     )
   }
 
