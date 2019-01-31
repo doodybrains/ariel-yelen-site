@@ -173,8 +173,12 @@ class Index extends React.Component {
         this.props.data.allContentfulAllOtherProjects.edges[0].node.listOfOtherProjects.map((op, i) => {
             return (
               <div className="blog-post" key={i}>
-                {op.title &&
-                  <a href={op.link} target="_blank" className="title">{op.title}</a>
+                {!op.titleLink &&
+                  <span className="title">{op.title}</span>
+                }
+                
+                {op.titleLink &&
+                  <a href={op.titleLink} target="_blank" className="title">{op.title}</a>
                 }
 
                 {op.info &&
@@ -292,6 +296,7 @@ export const pageQuery = graphql`
   }
   fragment otherProjectsInList on ContentfulOtherProject {
     title
+    titleLink
     info {
       childMarkdownRemark {
         html
